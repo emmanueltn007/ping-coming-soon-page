@@ -34,29 +34,112 @@ h1 span {
 }
 
 .input-container {
-    display: flex;
-    justify-content: center;
-    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+    position: relative;
 }
 
 input {
     border: 0.075rem rgb(194, 211, 255) solid;
-    padding: 12px 55px;
+    padding: 10px 55px 10px 10px;
     border-radius: 24px;
 }
 
 input::placeholder {
-    left: -5%;
+    color: rgb(194, 211, 255);
+    font-size: 0.75rem;
+}
+
+input:focus {
+    outline: 1px blue solid;
 }
 
 button {
     border: none;
     color: white;
     background-color: rgb(79, 125, 243);
-    padding: 12px 45px;
+    padding: 10px 45px;
     border-radius: 24px;
+    box-shadow: rgba(99, 99, 99, 0.75) 0px 2px 8px 0px;
+    cursor: pointer;
 }
 
-.attribution {font-size: 11px; text-align: center;}
+button:hover {
+    opacity: 0.75;
+}
+
+.message {
+    position: absolute;
+    color: rgb(255, 82, 99);
+    font-size: 0.7rem;
+    left: 50%;
+    transform: translateX(-100%);
+}
+
+.social-links-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-links-container a {
+    transition: all 0.2s ease-in-out;
+}
+
+.social-links-container a:hover {
+    transform: translateY(-15%);
+} 
+
+.copyright {
+    font-size: 11px;
+    margin-bottom: 2.5rem;
+}
+
+.attribution {
+    font-size: 11px;
+}
 
 .attribution a {color: hsl(228, 45%, 44%);}
+
+@media screen and (max-width: 390px) {
+    .logo > img {
+        width: 65px;
+    }
+    .input-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+
+    input,
+    button {
+        width: 320px;
+    }
+
+    input {
+        margin-bottom: 1rem;
+    }
+
+    button {
+        padding: 10px 45px;
+    }
+
+    .message {
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .content > img {
+        width: 350px;
+        margin-bottom: 5rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .content > p {
+        font-size: 0.8rem;
+    }
+}
